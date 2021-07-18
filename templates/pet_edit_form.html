@@ -4,7 +4,7 @@
 
 <h1>{{ pet.name }}</h1>
 
-<img class="img-fluid" src="{{pet.image()}}">
+<img class="img-thumbnail" src="{{pet.image()}}">
 
 <h2>Update</h2>
 
@@ -14,7 +14,12 @@
        
     <div class='form-group'>
     {{ field.label }}
-    {{ field(class="form-control") }}
+    {% if field.widget.input_type != 'checkbox' %}
+        {{ field(class="form-control") }}
+    {% endif %}
+        {% if field.widget.input_type == 'checkbox' %}
+        {{ field() }}
+    {% endif %}
 
         <span>
             {% if field.errors %}

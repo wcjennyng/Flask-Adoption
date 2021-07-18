@@ -11,8 +11,10 @@
     <li>
         <img class='img-thumbnail' src='{{pet.image()}}'>
         <a href="/{{pet.id}}/edit"> {{ pet.name }}</a>
-    {% if pet.available %} <b>is available!</b> 
-    {% else %} <b class="text-danger">is not available</b>
+    {% if pet.available %} 
+        <b>is available!</b> 
+    {% else %} 
+        <b class="text-danger">is not available</b>
     {% endif %}
     </li>
     {% else %}
